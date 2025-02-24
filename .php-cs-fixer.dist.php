@@ -6,7 +6,6 @@ $finder = (new PhpCsFixer\Finder())
         __DIR__ . '/src',
         __DIR__ . '/tests',
         __DIR__ . '/vendor/wirdesign-communication-ag/wirhub/Command',
-        __DIR__ . '/vendor/wirdesign-communication-ag/wirhub/Component',
         __DIR__ . '/vendor/wirdesign-communication-ag/wirhub/Controller',
         __DIR__ . '/vendor/wirdesign-communication-ag/wirhub/DataFixtures',
         __DIR__ . '/vendor/wirdesign-communication-ag/wirhub/DependencyInjection',

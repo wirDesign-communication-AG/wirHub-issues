@@ -7,23 +7,12 @@
         <server name="APP_ENV" value="test"/>
         <server name="KERNEL_CLASS" value="App\Kernel"/>
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
-        <env name="SYMFONY_PHPUNIT_VERSION" value="9.6"/>
+        <env name="SYMFONY_PHPUNIT_VERSION" value="11.5"/>
+        <env name="APP_1076" value="new"/>
     </php>
-    <coverage>
-        <include>
-            <directory>vendor/wirdesign-communication-ag/wirhub</directory>
-        </include>
-        <exclude>
-            <directory>vendor/wirdesign-communication-ag/wirhub/assets</directory>
-            <directory>vendor/wirdesign-communication-ag/wirhub/build</directory>
-            <directory>vendor/wirdesign-communication-ag/wirhub/Resources</directory>
-            <directory>vendor/wirdesign-communication-ag/wirhub/Tests</directory>
-            <directory>vendor/wirdesign-communication-ag/wirhub/translations</directory>
-        </exclude>
-    </coverage>
     <extensions>
-        <extension class="Symfony\Component\Panther\ServerExtension"/>
-        <extension class="AppBundle\Tests\Helper\Hooks\BypassFinalHook"/>
+        <bootstrap class="Symfony\Component\Panther\ServerExtension"/>
+        <bootstrap class="DG\BypassFinals\PHPUnitExtension"/>
     </extensions>
     <testsuites>
         <testsuite name="Application Tests">

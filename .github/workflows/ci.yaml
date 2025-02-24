@@ -1,7 +1,7 @@
 name: 'CI'
 on:
     pull_request:
-        branches: [ 'main', 'wip/*', 'v3.0.*' ]
+        branches: [ 'main', 'wip/*', 'v3.0.*', 'v3.1.*' ]
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -61,10 +61,10 @@ jobs:
             -   name: Prepare symfony
                 run: |
                     sudo -u www-data composer dump-env test --working-dir /var/www/wirhub
-                    sudo -u www-data php /var/www/wirhub/bin/console cache:clear
-                    sudo -u www-data php /var/www/wirhub/bin/console assets:install public/
-                    sudo -u www-data php /var/www/wirhub/bin/console doctrine:database:create
-                    sudo -u www-data mkdir /var/www/wirhub/var/cache/test/sessions 
+                    sudo -u www-data APP_ENV=test php /var/www/wirhub/bin/console cache:clear
+                    sudo -u www-data APP_ENV=test php /var/www/wirhub/bin/console assets:install public/
+                    sudo -u www-data APP_ENV=test php /var/www/wirhub/bin/console doctrine:schema:update --force
+                    sudo -u www-data mkdir /var/www/wirhub/var/cache/test/sessions
 
             -   name: Finish webserver
                 run: |

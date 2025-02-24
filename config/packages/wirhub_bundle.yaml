@@ -174,8 +174,6 @@ security:
             pattern: ^/login$
             security: false
     access_control:
-        - { path: ^/settings, role: ROLE_EDITOR }
-        - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/, roles: PUBLIC_ACCESS }
 
 twig:
